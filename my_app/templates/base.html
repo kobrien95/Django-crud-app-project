@@ -21,8 +21,22 @@
       </div>
       <nav>
         <ul>
-          <li><a href="/trucks">All Monster Trucks</a></li>
-          <li><a href="/about">About</a></li>
+          {% if user.is_authenticated %}
+
+        <li><a href="{% url 'truck-index' %}">All Monster Trucks</a></li>
+        <li><a href="{% url 'truck-create' %}">Add a Monster Truck</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li>
+          <form action="{% url 'logout' %}" id="logout-form" method="POST">
+            {% csrf_token %}
+            <button type="submit">Log out</button>
+          </form>
+        </li>
+        {% else %}
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'home' %}">Login</a></li>
+        <li><a href="{% url 'signup' %}">Signup</a></li>
+        {% endif %}
         </ul>
       </nav>
     </header>

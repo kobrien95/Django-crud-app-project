@@ -8,11 +8,13 @@
 <section class="page-header">
   <h1>Truck List</h1>
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv0BRahF63Grd3StIeuVTI7T0VFGSsAhqKCw&s" alt="A cool Truck" />
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0i9jjG3qfKQfabnAp8HtrHf0lszSuFwTVWw&s" alt="A black monste truck" />
 </section>
 
-<section class="card-container">
+<section class="truck-container">
   {% for truck in trucks %}
     <div class="card">
+      <a href="/trucks/{{ truck.id }}">
       <div class="card-content">
         <div class="card-img-container">
           <img
@@ -28,6 +30,7 @@
         {% endif %}
         <p>{{ truck.description }}</p>
       </div>
+      </a>
     </div>
   {% endfor %}
 </section>

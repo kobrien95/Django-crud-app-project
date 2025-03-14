@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock head %}
+
+{% block content %}
+
+<section class="logo-container">
+  <div class="truck-container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv0BRahF63Grd3StIeuVTI7T0VFGSsAhqKCw&s" alt="The Monster Truck Logo" />
+  </div>
+</section>
+
+{% if not user.is_authenticated %} 
+<section>
+  <form action="{% url 'home' %}" method="post" class="login">
+    <h1>Login</h1>
+    {% csrf_token %} {{ form.as_p }}
+    <input type="hidden" name="next" value="{{ next }}" />
+    <button type="submit" class="btn submit">Login</button>
+  </form>
+</section>
+{% endif %}
+
+{% endblock %}

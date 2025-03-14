@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/trucks/truck-detail.css' %}" />
+{% endblock %} 
+{% block content %}
+<section class="truck-container">
+  <div class="truck-img">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPie7EmAyl8vDkoe4CJdxfi3eCDypaVOseDA&s" alt="Monster Truck" />
+  </div>
+  <div class="truck-details">
+    <h1>{{ truck.name }}</h1>
+    {% if cat.age > 0 %}
+        <p>A {{ cat.age }} year old {{ truck.type }}</p>
+        {% else %}
+        <p>A {{ truck.type }} Monster Truck.</p>
+        {% endif %}
+        <p>{{ truck.description }}</p>
+
+        <div class="truck-actions">
+          <a href="{% url 'truck-update' truck.id %}" class="btn warn">Edit</a>
+          <a href="{% url 'truck-delete' truck.id %}" class="btn warn">Delete</a>
+        </div>
+  </div>
+</section>
+{% endblock %}
