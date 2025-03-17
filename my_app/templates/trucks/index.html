@@ -23,8 +23,8 @@
           />
         </div>
         <h2 class="card-title">{{ truck.name }}</h2>
-        {% if cat.age > 0 %}
-        <p>A {{ cat.age }} year old {{ truck.type }}</p>
+        {% if truck.color %}
+        <p>A {{ truck.color }} Monster Truck {{ truck.type }}</p>
         {% else %}
         <p>A {{ truck.type }} Monster Truck.</p>
         {% endif %}

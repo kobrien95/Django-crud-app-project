@@ -11,5 +11,4 @@ urlpatterns = [
     path('trucks/<int:pk>/update/', views.TruckUpdate.as_view(), name ='truck-update'),
     path('trucks/<int:pk>/delete/', views.TruckDelete.as_view(), name ='truck-delete'),
     path('accounts/signup/', views.signup, name='signup'),
-
 ]

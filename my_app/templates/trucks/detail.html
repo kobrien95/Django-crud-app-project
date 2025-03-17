@@ -10,8 +10,8 @@
   </div>
   <div class="truck-details">
     <h1>{{ truck.name }}</h1>
-    {% if cat.age > 0 %}
-        <p>A {{ cat.age }} year old {{ truck.type }}</p>
+    {% if truck.color %}
+        <p>A {{ truck.color }} Monster Truck {{ truck.type }}</p>
         {% else %}
         <p>A {{ truck.type }} Monster Truck.</p>
         {% endif %}
